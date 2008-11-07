@@ -7,7 +7,7 @@ lib/tasks/wvu.rake
 config/slate/wvu.rb
 config/database.yml
 coverage
-spec/public/*
+spec/assets
 public/assets
 vendor/plugins/*-slate-plugin
 public/stylesheets/
