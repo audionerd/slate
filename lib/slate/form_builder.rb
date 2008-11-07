@@ -78,9 +78,7 @@ module Slate
     
     # surrounds the given block in a DIV with class 'actions'
     def actions(&block)
-      @template.concat '<div class="actions">' + 
-        @template.capture(&block) +
-      '</div>', block.binding
+      @template.concat @template.content_tag(:div, @template.capture(&block), :class => 'actions')
     end
   end
 end

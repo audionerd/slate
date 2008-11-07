@@ -65,7 +65,6 @@ module ApplicationHelper
       :fields => capture(&block)
     }
     
-    result = render(:partial => 'forms/fieldset', :locals => locals)
-    concat result, block.binding
+    concat render(:partial => 'forms/fieldset', :locals => locals)
   end
 end

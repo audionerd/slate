@@ -24,7 +24,6 @@ module AssociatedFormHelper
       capture(item, &block)
     end
     
-    result = render(:partial => 'shared/associated_form', :locals => locals)
-    concat result, block.binding
+    concat render(:partial => 'shared/associated_form', :locals => locals)
   end
 end
