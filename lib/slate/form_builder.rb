@@ -46,7 +46,7 @@ module Slate
     def render_form_element(helper, label, tip, template, helper_args, element, include_errors=true)
       errors = if include_errors
         begin
-          @template.error_message_on("#{@object_name}","#{helper_args[0]}", helper_args[0].to_s.humanize + ' ')
+          @template.error_message_on("#{@object_name}","#{helper_args[0]}", :prepend_text => helper_args[0].to_s.humanize + ' ')
         rescue 
           nil
         end  
