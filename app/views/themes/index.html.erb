@@ -3,7 +3,9 @@
 
 <ul>
   <% Theme.installed.each do |theme| %>
-    <li><%= theme %> <%= link_to '(update)', refresh_theme_path(theme.to_s) %></li>
+    <li><%= theme %> <%= link_to '(update)', refresh_theme_path(theme.to_s) %>
+      <%= link_to glyph('delete'), destroy_theme_path(theme.to_s), :method => :delete, 
+        :confirm => "Delete this theme?\n\n(Note: this cannot be undone)", :title => "Delete theme: #{theme.to_s}" %></li>
   <% end %>  
 </ul>
 

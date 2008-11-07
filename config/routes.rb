@@ -42,7 +42,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   
   map.resources :themes, :member => {
-    :refresh => :any
+    :refresh => :any,
+    :destroy => :delete # Note: avoids conflict with theme_path() helper in builder_helper.rb
   }
 
   # ==========================================

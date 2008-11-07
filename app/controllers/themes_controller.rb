@@ -15,4 +15,11 @@ public
     flash[:notice] = @theme.install
     redirect_to resources_url
   end
+  
+  # Removes a theme
+  def destroy
+    Theme.find(params[:id]).destroy
+    flash[:notice] = "Successfully deleted theme"
+    redirect_to resources_url
+  end
 end

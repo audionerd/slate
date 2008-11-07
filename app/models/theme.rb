@@ -43,4 +43,8 @@ class Theme < ActiveRecord::Base
   def update
     `cd "#{Rails.public_path / 'themes' / name}" && git pull origin master`
   end
+  
+  def destroy
+    FileUtils.remove_dir(Rails.public_path / 'themes' / name, true)
+  end
 end
