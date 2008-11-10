@@ -11,7 +11,7 @@ protected
   # returns navgiation items for admin 
   # (super user)
   def admin_navigation_items
-    tabs = Dictionary.new
+    tabs = ActiveSupport::OrderedHash.new
     tabs['Dashboard'] = dashboard_url
     tabs['Users'] = users_url
     tabs['Themes']     = themes_path
@@ -20,11 +20,11 @@ protected
   
   # returns navigation items for space
   def space_navigation_items
-    tabs =  Dictionary.new
+    tabs =  ActiveSupport::OrderedHash.new
     tabs['Dashboard']  = space_dashboard_path(Space.active)
     tabs['Pages']      = space_pages_path(Space.active)
-    tabs['Files']      = space_assets_path(Space.active)
     tabs.merge!          plugin_navigation_items
+    tabs['Files']      = space_assets_path(Space.active)
     tabs['Settings']   = edit_space_path(Space.active)
     tabs
   end
